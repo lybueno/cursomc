@@ -1,8 +1,5 @@
 package com.educandoweb.cursomc.domain;
 
-import com.fasterxml.jackson.annotation.JsonManagedReference;
-import org.springframework.boot.autoconfigure.domain.EntityScan;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +13,6 @@ public class Categoria {
     private Integer id;
     private String name;
 
-    @JsonManagedReference
     @ManyToMany(mappedBy="categorias")
     private List<Produto> produtos = new ArrayList<>();
 

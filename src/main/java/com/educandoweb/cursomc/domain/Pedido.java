@@ -1,7 +1,6 @@
 package com.educandoweb.cursomc.domain;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -19,11 +18,9 @@ public class Pedido {
     @JsonFormat(pattern = "dd/MM/yyyy hh:mm")
     private Date instante;
 
-    @JsonManagedReference
     @OneToOne(cascade=CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
 
-    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
